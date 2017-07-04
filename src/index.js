@@ -4,12 +4,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import {inject, create} from 'formlite';
+import {inject, create, VALIDATE_MODE_ALL} from 'formlite';
 import DatePicker from './DatePicker';
 import Input from './Input';
 import moment from 'moment';
 inject([DatePicker, Input]);
-@create()
+@create(null, VALIDATE_MODE_ALL)
 class App extends React.Component{
   // state = {
   //     focused: false
@@ -66,7 +66,7 @@ class App extends React.Component{
         <Input name="a" style={{color: 'blue'}}/>
         <Input name="b"/>
         <Input name="c"/>
-        <Input name="c" style={{color: 'blue'}}/>
+        <Input name="c" style={{color: 'blue'}} readOnly/>
         <DatePicker name="d" onChange={this.onDateChange}/>
         <button onClick={this.onSubmit}>submit</button>
         <button onClick={this.onReset}>reset</button>

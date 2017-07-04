@@ -71,7 +71,7 @@
   "dependencies": {
     "babel-eslint": "^7.2.1",
     "classnames": "^2.2.5",
-    "formlite": "^2.0.0",
+    "formlite": "^2.0.4",
     "immutable": "^3.8.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
