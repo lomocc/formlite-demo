@@ -4,12 +4,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import {inject, create, VALIDATE_MODE_ALL} from 'formlite';
+import {inject, create, ALL} from 'formlite';
 import DatePicker from './DatePicker';
 import Input from './Input';
+import FormRenderer from './FormRenderer';
 import moment from 'moment';
 inject([DatePicker, Input]);
-@create(null, VALIDATE_MODE_ALL)
+@create(FormRenderer, ALL)
 class App extends React.Component{
   // state = {
   //     focused: false
@@ -29,6 +30,7 @@ class App extends React.Component{
   //     console.log('componentDidUpdate', this.props.form.getValues());
   // }
   componentWillMount(){
+    // this.props.form.setItemRenderer(FormRenderer);
     this.props.form.setOption({
       a: {
         label: 'LabelA',
@@ -36,7 +38,9 @@ class App extends React.Component{
         required: 'A必填',
         initialValue:"AAA",
         validator: [{
-          pattern:/.{5,10}/, message: '长度必须是5到10位'
+          pattern:/^.{5,10}$/, message: '长度必须是5到10位'
+        }, {
+          pattern:/^[0-9]+$/, message: '必须是数字'
         }]
       },
       b: {
