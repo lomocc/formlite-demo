@@ -2,6 +2,7 @@
  * Created by Administrator on 2017/6/30.
  */
 import React from 'react';
+import 'react-dates/initialize';
 import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
 export default class DatePicker extends React.Component{

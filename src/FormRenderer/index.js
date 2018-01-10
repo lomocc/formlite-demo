@@ -1,9 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-/**
- * Created by Vincent on 2017/7/10.
- */
-export default class extends React.Component {
+export default class FormRenderer extends React.Component {
   render() {
     let {label, help, required, description, children, validating, error, decorator} = this.props;
     let className = error?'error':'success';
